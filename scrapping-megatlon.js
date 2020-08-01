@@ -55,7 +55,7 @@ async function fillSelectWithXPathSucursal(page, xpathcombo, xpathvalue) {
 }
 
 //scrapping 
-async function scrappingMegatlon () {
+const scrapping = async function scrappingMegatlon () {
   await puppeteer.launch({
     headless: false, args: ['--no-sandbox', '--disable-setuid-sandbox',
       '--window-size=1920,1080',
@@ -115,11 +115,13 @@ async function scrappingMegatlon () {
     });
   
 }
-scrappingMegatlon()
+
 const job = new CronJob('00 00 00  * * *', function() {
 	const d = new Date();
   console.log('At midnigth', d);
   scrappingMegatlon()
 });
 console.log('After job instantiation');
-job.start();
+
+
+module.exports = {scrapping, job} 

@@ -4,7 +4,9 @@
   "description": "scrapping with puppeteer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "scrapping": "nodemon scrapping-megatlon.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,6 @@
   },
   "homepage": "https://github.com/lizarq/scrapping#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "nodemailer": "^6.4.11"
   }
 }
